@@ -42,7 +42,7 @@
   <div class="max-w-6xl mx-auto flex items-center justify-between px-6 h-[72px]">
 
     <a href="#" onclick="closeMobileMenu()">
-      <img src="nasna logo.jpg.jpeg" alt="NASNA Logo" class="h-20 w-auto" />
+      <img src="nasna logo.jpg.jpeg" alt="NASNA Logo" class="h-15 w-auto" />
     </a>
 
     <!-- Desktop nav -->
@@ -324,15 +324,33 @@
       Watch KaziYetu in action — an animated walkthrough showing how the platform works for both youth and businesses, screen by screen.
     </p>
 
-    <!-- Demo embed -->
+    <!-- Demo embed — lazy loaded so it doesn't affect page scroll on open -->
     <div class="mt-12 rounded-3xl overflow-hidden border border-stone-800 shadow-2xl shadow-black/50">
       <iframe
-        src="demo.html"
+        data-src="demo.html"
         class="w-full border-0 block"
         style="height: 680px;"
-        title="KaziYetu Platform Demo Walkthrough"
+        title="Nasna Jobs Platform Demo Walkthrough"
+        tabindex="-1"
+        id="demo-iframe"
       ></iframe>
     </div>
+
+    <script>
+      // Only load the iframe when it scrolls into view — prevents auto-scroll on page open
+      const demoIframe = document.getElementById('demo-iframe');
+      let demoLoaded = false;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !demoLoaded) {
+            demoIframe.src = demoIframe.dataset.src;
+            demoLoaded = true;
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.1 });
+      observer.observe(demoIframe);
+    </script>
 
     <!-- CTA row -->
     <div class="mt-6 flex flex-wrap items-center gap-4">
@@ -340,7 +358,7 @@
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         Open Demo Fullscreen →
       </a>
-      <p class="text-stone-600 text-xs">Auto-plays through all 6 screens · 36 seconds total</p>
+      <p class="text-stone-600 text-xs">Auto-plays through all 7 screens · 70 seconds total</p>
     </div>
   </div>
 </section>
