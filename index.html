@@ -462,10 +462,20 @@
   });
 </script>
 
-<div id="home" class="pt-[72px]" style="position:relative; overflow:hidden; height:90vh; min-height:520px;">
+<div id="home" class="pt-[72px] home-hero-wrap" style="position:relative; overflow:hidden;">
+
+  <style>
+    @media (min-width: 768px) {
+      .home-hero-wrap { height: 90vh; min-height: 520px; }
+      .home-hero-img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block; }
+    }
+    @media (max-width: 767px) {
+      .home-hero-img { width:100%;display:block;position:relative; }
+    }
+  </style>
 
   <!-- The image cropped from top — only lower portion shows -->
-  <img src="nasna.jpeg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;transform-origin:center bottom;animation:kenBurns 14s ease-in-out forwards;" />
+  <img src="nasna.jpeg" alt="" class="home-hero-img" style="transform-origin:center bottom;animation:kenBurns 14s ease-in-out forwards;" />
 
   <!-- Layered atmosphere overlays -->
   <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,0,0,0.72) 0%, rgba(10,0,0,0.18) 45%, rgba(10,0,0,0.08) 100%);pointer-events:none;"></div>
