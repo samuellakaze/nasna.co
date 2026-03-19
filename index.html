@@ -479,14 +479,15 @@
   });
 </script>
 
-<div id="home" class=" home-hero-wrap" style="position:relative; overflow:hidden;">
+<div id="home" class="home-hero-wrap" style="position:relative; overflow:hidden;">
 
   <style>
     @media (min-width: 768px) {
-      .home-hero-wrap { height: 100vh; min-height: 700px; }
+      .home-hero-wrap { height: 100vh; min-height: 700px; padding-top: 0; }
       .home-hero-img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block; }
     }
     @media (max-width: 767px) {
+      .home-hero-wrap { padding-top: 0 !important; }
       .home-hero-img { width:100%;display:block;position:relative; }
     }
   </style>
