@@ -462,9 +462,96 @@
   });
 </script>
 
-<div id="home" class="">
-  <img src="nasna.jpeg" alt="" class="w-full" />
+<div id="home" class="" style="position:relative; overflow:hidden;">
+  <img src="nasna.jpeg" alt="" class="w-full" style="display:block;" />
+
+  <!-- Overlay text layer -->
+  <div style="position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; pointer-events:none;">
+
+    <!-- NASNA wordmark -->
+    <div class="hero-word" style="
+      font-family:'Playfair Display', serif;
+      font-weight:900;
+      font-size:clamp(5rem, 18vw, 16rem);
+      color:#fff;
+      letter-spacing:0.12em;
+      line-height:1;
+      text-align:center;
+      opacity:0;
+      transform:translateY(40px) scale(0.95);
+      animation: heroWordIn 1.2s cubic-bezier(0.22,1,0.36,1) 0.2s forwards;
+      text-shadow: 0 8px 48px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3);
+      mix-blend-mode: normal;
+    ">NASNA</div>
+
+    <!-- Thin gold divider line -->
+    <div style="
+      width:0;
+      height:2px;
+      background:linear-gradient(90deg, transparent, rgba(201,168,76,0.8), transparent);
+      margin-top:12px;
+      animation: lineExpand 0.9s cubic-bezier(0.22,1,0.36,1) 0.85s forwards;
+    "></div>
+
+    <!-- Subheadings row -->
+    <div style="
+      display:flex;
+      align-items:center;
+      gap:clamp(12px, 3vw, 36px);
+      margin-top:16px;
+      opacity:0;
+      transform:translateY(16px);
+      animation: subIn 0.9s ease 1.1s forwards;
+    ">
+      <span style="
+        font-family:'Syne',sans-serif;
+        font-weight:700;
+        font-size:clamp(0.6rem, 1.4vw, 0.95rem);
+        letter-spacing:0.22em;
+        text-transform:uppercase;
+        color:rgba(255,255,255,0.75);
+        text-shadow:0 2px 12px rgba(0,0,0,0.5);
+      ">Empowering Youth</span>
+
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(201,168,76,0.8);flex-shrink:0;"></span>
+
+      <span style="
+        font-family:'Syne',sans-serif;
+        font-weight:700;
+        font-size:clamp(0.6rem, 1.4vw, 0.95rem);
+        letter-spacing:0.22em;
+        text-transform:uppercase;
+        color:rgba(255,255,255,0.75);
+        text-shadow:0 2px 12px rgba(0,0,0,0.5);
+      ">Kigali, Rwanda</span>
+
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(201,168,76,0.8);flex-shrink:0;"></span>
+
+      <span style="
+        font-family:'Syne',sans-serif;
+        font-weight:700;
+        font-size:clamp(0.6rem, 1.4vw, 0.95rem);
+        letter-spacing:0.22em;
+        text-transform:uppercase;
+        color:rgba(255,255,255,0.75);
+        text-shadow:0 2px 12px rgba(0,0,0,0.5);
+      ">Est. 2024</span>
+    </div>
+
+  </div>
 </div>
+
+<style>
+  @keyframes heroWordIn {
+    to { opacity:1; transform:translateY(0) scale(1); }
+  }
+  @keyframes lineExpand {
+    to { width: clamp(120px, 30vw, 380px); }
+  }
+  @keyframes subIn {
+    to { opacity:1; transform:translateY(0); }
+  }
+</style>
 
 <!-- Reveal on scroll script -->
 <script>
@@ -869,7 +956,7 @@
           <div style="width:44px;height:44px;border-radius:14px;background:rgba(128,0,0,0.3);border:1px solid rgba(128,0,0,0.5);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
             <svg class="w-4 h-4" style="color:#c9a84c;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <div><p style="color:#fff;font-weight:600;font-size:0.9rem;font-family:'Syne',sans-serif;">Email</p><p style="color:rgba(255,255,255,0.4);font-size:0.875rem;margin-top:2px;">nasna@gmail.com</p></div>
+          <div><p style="color:#fff;font-weight:600;font-size:0.9rem;font-family:'Syne',sans-serif;">Email</p><p style="color:rgba(255,255,255,0.4);font-size:0.875rem;margin-top:2px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2b454a58454a6b4c464a424705484446">[email&#160;protected]</a></p></div>
         </div>
         <div style="display:flex;align-items:start;gap:16px;">
           <div style="width:44px;height:44px;border-radius:14px;background:rgba(128,0,0,0.3);border:1px solid rgba(128,0,0,0.5);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -916,10 +1003,4 @@
     <div style="display:flex;gap:20px;">
       <a href="#" style="color:rgba(255,255,255,0.25);font-size:0.875rem;transition:color 0.2s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Privacy</a>
       <a href="#" style="color:rgba(255,255,255,0.25);font-size:0.875rem;transition:color 0.2s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Terms</a>
-      <a href="#" style="color:rgba(255,255,255,0.25);font-size:0.875rem;transition:color 0.2s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Help</a>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+      <a href="#" style="color:rgba(255,255,255,0.25);font-size:0.875rem;transition:color 0.2s;" onmouseover="this.style.color='#c9
