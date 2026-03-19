@@ -409,7 +409,7 @@
     </button>
   </div>
 
-  <div id="mobile-menu" class="flex flex-col px-6 gap-1 md:hidden" style="font-family:'Syne',sans-serif; font-weight:600;">
+  <div id="mobile-menu" class="flex flex-col px-6 gap-1 md:hidden" style="font-family:'Syne',sans-serif; font-weight:600; background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none;">
     <a href="#home"     onclick="closeMobileMenu()" class="py-3 border-b block transition-colors text-stone-800 hover:text-burgundy" style="border-color:rgba(128,0,0,0.1);">Home</a>
     <a href="#about"    onclick="closeMobileMenu()" class="py-3 border-b block transition-colors text-stone-800" style="border-color:rgba(128,0,0,0.1);">About Us</a>
     <a href="#solution" onclick="closeMobileMenu()" class="py-3 border-b block transition-colors text-stone-800" style="border-color:rgba(128,0,0,0.1);">Solution</a>
@@ -423,10 +423,16 @@
   function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
     const btn  = document.getElementById('hamburger');
+    const header = document.getElementById('main-header');
     const isOpen = menu.classList.contains('open');
     menu.classList.toggle('open');
     btn.classList.toggle('open');
     btn.setAttribute('aria-expanded', String(!isOpen));
+    // Force background based on scroll state
+    if (!isOpen) {
+      const scrolled = header.classList.contains('scrolled');
+      menu.style.background = scrolled ? 'rgba(249,240,240,0.96)' : 'transparent';
+    }
   }
   function closeMobileMenu() {
     document.getElementById('mobile-menu').classList.remove('open');
