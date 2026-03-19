@@ -6,17 +6,24 @@
 <title>Nasna Jobs – Platform Walkthrough</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
 <style>
-:root{--orange:#f97316;--orange-dark:#ea6c0a;--orange-glow:rgba(249,115,22,.25);--s950:#0c0a09;--s900:#1c1917;--s800:#292524;--s700:#44403c;--s500:#78716c;--s400:#a8a29e;--s300:#d6d3d1;--s200:#e7e5e4;--s100:#f5f5f4;}
+:root{
+  --burgundy:#800000;
+  --burgundy-dark:#5a0000;
+  --burgundy-glow:rgba(128,0,0,.28);
+  --burgundy-pale:#fff9f9;
+  --gold:#c9a84c;
+  --s950:#0c0a09;--s900:#1c1917;--s800:#292524;--s700:#44403c;--s500:#78716c;--s400:#a8a29e;--s300:#d6d3d1;--s200:#e7e5e4;--s100:#f5f5f4;
+}
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:28px 16px 48px;}
+body{font-family:'DM Sans',sans-serif;background:#1a0000;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:28px 16px 48px;}
 .wrap{width:100%;max-width:980px;}
 
 /* HEADER */
 .hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;}
 .hdr-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:white;display:flex;align-items:center;gap:9px;}
-.hdr-logo .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);}
+.hdr-logo .dot{width:8px;height:8px;border-radius:50%;background:var(--burgundy);}
 .hdr-sub{font-weight:400;font-size:.85rem;color:var(--s500);margin-left:4px;}
-.hdr-badge{background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.28);color:var(--orange);font-family:'Syne',sans-serif;font-weight:700;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:99px;}
+.hdr-badge{background:rgba(128,0,0,.18);border:1px solid rgba(128,0,0,.38);color:#e08080;font-family:'Syne',sans-serif;font-weight:700;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:99px;}
 
 /* STAGE */
 .stage{display:grid;grid-template-columns:1fr 278px;gap:40px;align-items:start;}
@@ -26,18 +33,18 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
 .left{display:flex;flex-direction:column;}
 
 /* Step badge */
-.step-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.22);border-radius:99px;padding:5px 14px;font-family:'Syne',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;width:fit-content;}
-.step-badge .sn{width:18px;height:18px;border-radius:50%;background:var(--orange);color:white;display:flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:800;}
+.step-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(128,0,0,.15);border:1px solid rgba(128,0,0,.3);border-radius:99px;padding:5px 14px;font-family:'Syne',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#e08080;margin-bottom:12px;width:fit-content;}
+.step-badge .sn{width:18px;height:18px;border-radius:50%;background:var(--burgundy);color:white;display:flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:800;}
 
 /* Who badge */
 .who{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:99px;font-family:'Syne',sans-serif;font-weight:700;font-size:.63rem;margin-bottom:14px;width:fit-content;}
-.who.y{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.22);color:#10b981;}
-.who.b{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.22);color:#3b82f6;}
-.who.a{background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.22);color:var(--orange);}
+.who.y{background:rgba(128,0,0,.1);border:1px solid rgba(128,0,0,.25);color:#e08080;}
+.who.b{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.22);color:var(--gold);}
+.who.a{background:rgba(128,0,0,.1);border:1px solid rgba(128,0,0,.25);color:#e08080;}
 
 /* Title */
 .cap-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;color:white;line-height:1.15;margin-bottom:10px;min-height:4.2rem;}
-.cap-title em{font-style:normal;color:var(--orange);}
+.cap-title em{font-style:normal;color:#e08080;}
 
 /* Desc */
 .cap-desc{font-size:.875rem;color:var(--s400);line-height:1.75;margin-bottom:16px;min-height:3rem;}
@@ -45,11 +52,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
 
 /* Actions */
 .actions{display:flex;flex-direction:column;gap:7px;margin-bottom:22px;min-height:140px;}
-.ai{display:flex;align-items:flex-start;gap:10px;padding:10px 13px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);border-radius:12px;opacity:0;transform:translateY(5px);transition:opacity .3s ease,transform .3s ease,background .3s,border-color .3s;}
+.ai{display:flex;align-items:flex-start;gap:10px;padding:10px 13px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;opacity:0;transform:translateY(5px);transition:opacity .3s ease,transform .3s ease,background .3s,border-color .3s;}
 .ai.vis{opacity:1;transform:none;}
-.ai.hl{background:rgba(249,115,22,.07);border-color:rgba(249,115,22,.22);}
+.ai.hl{background:rgba(128,0,0,.1);border-color:rgba(128,0,0,.3);}
 .ai .an{width:22px;height:22px;border-radius:7px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:.6rem;color:var(--s400);flex-shrink:0;margin-top:1px;transition:all .3s;}
-.ai.hl .an{background:var(--orange);color:white;}
+.ai.hl .an{background:var(--burgundy);color:white;}
 .ai .at{font-size:.8rem;color:var(--s400);line-height:1.55;transition:color .3s;}
 .ai.hl .at{color:#e7e5e4;}
 .ai .at strong{color:white;font-weight:600;}
@@ -57,14 +64,14 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
 /* Progress */
 .prog{display:flex;gap:5px;margin-bottom:18px;}
 .pd{height:3px;border-radius:99px;flex:1;background:rgba(255,255,255,.09);position:relative;overflow:hidden;cursor:pointer;}
-.pd .pf{position:absolute;inset:0;background:var(--orange);width:0%;border-radius:99px;transition:width .1s linear;}
+.pd .pf{position:absolute;inset:0;background:var(--burgundy);width:0%;border-radius:99px;transition:width .1s linear;}
 .pd.done .pf{width:100%;}
 
 /* Controls */
 .ctrls{display:flex;align-items:center;gap:10px;}
 .cb{border:none;cursor:pointer;border-radius:11px;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;}
-.cb.pp{width:50px;height:50px;background:var(--orange);box-shadow:0 4px 18px var(--orange-glow);}
-.cb.pp:hover{background:var(--orange-dark);transform:scale(1.06);}
+.cb.pp{width:50px;height:50px;background:var(--burgundy);box-shadow:0 4px 18px var(--burgundy-glow);}
+.cb.pp:hover{background:var(--burgundy-dark);transform:scale(1.06);}
 .cb.sc{width:42px;height:42px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);}
 .cb.sc:hover{background:rgba(255,255,255,.12);}
 .cb svg{fill:white;}
@@ -76,19 +83,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
 .slist{display:flex;flex-direction:column;gap:5px;margin-top:20px;}
 .st{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:11px;cursor:pointer;border:1.5px solid transparent;transition:all .2s;background:rgba(255,255,255,.025);}
 .st:hover{background:rgba(255,255,255,.065);}
-.st.active{background:rgba(249,115,22,.07);border-color:rgba(249,115,22,.22);}
+.st.active{background:rgba(128,0,0,.12);border-color:rgba(128,0,0,.3);}
 .st .stn{width:23px;height:23px;border-radius:7px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:.6rem;color:var(--s400);flex-shrink:0;transition:all .2s;}
-.st.active .stn{background:var(--orange);color:white;}
+.st.active .stn{background:var(--burgundy);color:white;}
 .st .sti{flex:1;}
 .st .sti .stt{font-family:'Syne',sans-serif;font-weight:700;font-size:.74rem;color:var(--s300);}
 .st.active .sti .stt{color:white;}
-.st .sti .std{font-size:.63rem;color:var(--s600);margin-top:1px;}
-.st .stdur{font-family:'Syne',sans-serif;font-weight:700;font-size:.6rem;color:var(--s600);}
+.st .sti .std{font-size:.63rem;color:var(--s500);margin-top:1px;}
+.st .stdur{font-family:'Syne',sans-serif;font-weight:700;font-size:.6rem;color:var(--s500);}
 
 /* PHONE */
 .phone-col{position:sticky;top:20px;}
-.pframe{width:265px;background:#191210;border-radius:42px;padding:11px;box-shadow:0 0 0 1px rgba(255,255,255,.07),0 32px 80px rgba(0,0,0,.8),0 0 80px rgba(249,115,22,.05);position:relative;}
-.pframe::before{content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:68px;height:6px;background:#111;border-radius:0 0 8px 8px;z-index:10;}
+.pframe{width:265px;background:#100000;border-radius:42px;padding:11px;box-shadow:0 0 0 1px rgba(255,255,255,.07),0 32px 80px rgba(0,0,0,.8),0 0 80px rgba(128,0,0,.08);position:relative;}
+.pframe::before{content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:68px;height:6px;background:#0a0000;border-radius:0 0 8px 8px;z-index:10;}
 .pscreen{width:100%;border-radius:32px;overflow:hidden;position:relative;background:white;aspect-ratio:9/20;}
 
 /* SLIDES */
@@ -96,29 +103,29 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
 .slide.active{opacity:1;transform:none;z-index:2;}
 
 /* cursor */
-.cursor{position:absolute;width:17px;height:17px;border-radius:50%;background:rgba(249,115,22,.8);pointer-events:none;z-index:100;transition:all .5s cubic-bezier(.4,0,.2,1);box-shadow:0 0 0 5px rgba(249,115,22,.2);transform:translate(-50%,-50%);display:none;}
+.cursor{position:absolute;width:17px;height:17px;border-radius:50%;background:rgba(128,0,0,.85);pointer-events:none;z-index:100;transition:all .5s cubic-bezier(.4,0,.2,1);box-shadow:0 0 0 5px rgba(128,0,0,.22);transform:translate(-50%,-50%);display:none;}
 .cursor.vis{display:block;}
 
 /* slide components */
-.sbar{background:var(--orange);padding:8px 12px 7px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.sbar{background:var(--burgundy);padding:8px 12px 7px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
 .sbar .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:.85rem;color:white;}
-.sbar .logo span{color:#fed7aa;}
+.sbar .logo span{color:#f0b0b0;}
 .bnav{display:flex;background:white;border-top:1px solid #e7e5e4;padding:5px 0 7px;flex-shrink:0;}
 .bni{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;}
 .bni svg{width:14px;height:14px;stroke:#a8a29e;fill:none;stroke-width:2;}
 .bni span{font-family:'Syne',sans-serif;font-weight:700;font-size:.44rem;color:#a8a29e;text-transform:uppercase;}
-.bni.a svg{stroke:var(--orange);}
-.bni.a span{color:var(--orange);}
-.tgo{display:inline-block;padding:2px 6px;border-radius:99px;background:#fff7ed;color:var(--orange);border:1px solid #fed7aa;font-family:'Syne',sans-serif;font-weight:700;font-size:.48rem;}
+.bni.a svg{stroke:var(--burgundy);}
+.bni.a span{color:var(--burgundy);}
+.tgo{display:inline-block;padding:2px 6px;border-radius:99px;background:#fff0f0;color:var(--burgundy);border:1px solid #f0c0c0;font-family:'Syne',sans-serif;font-weight:700;font-size:.48rem;}
 .tgs{display:inline-block;padding:2px 6px;border-radius:99px;background:#f5f5f4;color:#78716c;border:1px solid #e7e5e4;font-family:'Syne',sans-serif;font-weight:700;font-size:.48rem;}
 .tgg{display:inline-block;padding:2px 6px;border-radius:99px;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;font-family:'Syne',sans-serif;font-weight:700;font-size:.48rem;}
 .av{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:.6rem;color:white;flex-shrink:0;}
-.stag{font-family:'Syne',sans-serif;font-weight:700;font-size:.46rem;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);}
+.stag{font-family:'Syne',sans-serif;font-weight:700;font-size:.46rem;letter-spacing:.1em;text-transform:uppercase;color:var(--burgundy);}
 .cw{background:white;border-radius:11px;padding:9px;border:1px solid #e7e5e4;margin-bottom:6px;}
 .cs{background:#f5f5f4;border-radius:11px;padding:9px;border:1px solid #e7e5e4;margin-bottom:6px;}
 .fl{font-family:'Syne',sans-serif;font-weight:600;font-size:.52rem;color:#44403c;margin-bottom:3px;}
 .fi{border:1.5px solid #e7e5e4;border-radius:8px;padding:5px 8px;font-family:'DM Sans',sans-serif;font-size:.62rem;color:#1c1917;background:white;width:100%;outline:none;}
-.fi.foc{border-color:var(--orange);}
+.fi.foc{border-color:var(--burgundy);}
 @keyframes su{from{opacity:0;transform:translateY(7px);}to{opacity:1;transform:none;}}
 .a1{animation:su .32s ease both;animation-delay:.07s;}
 .a2{animation:su .32s ease both;animation-delay:.18s;}
@@ -171,16 +178,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
               <div style="width:24px;height:24px;border-radius:7px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
             </div>
           </div>
-          <div style="background:linear-gradient(135deg,#0c0a09,#2a1a0a);padding:10px 11px 0;" class="a1">
-            <p style="font-size:.55rem;color:#a8a29e;margin-bottom:3px;">Good morning, Amina 👋</p>
-            <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:.88rem;color:white;line-height:1.25;">Find digital work that <span style="color:var(--orange);">fits your life.</span></p>
+          <div style="background:linear-gradient(135deg,#1a0000,#3a0a0a);padding:10px 11px 0;" class="a1">
+            <p style="font-size:.55rem;color:#a08080;margin-bottom:3px;">Good morning, Amina 👋</p>
+            <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:.88rem;color:white;line-height:1.25;">Find digital work that <span style="color:#e08080;">fits your life.</span></p>
             <div style="position:relative;margin:9px 0;">
               <input style="width:100%;border:none;border-radius:8px;padding:7px 9px 7px 26px;font-size:.62rem;outline:none;box-shadow:0 4px 12px rgba(0,0,0,.25);" placeholder="Search jobs, skills, companies…" readonly/>
               <svg style="position:absolute;left:8px;top:50%;transform:translateY(-50%);width:10px;height:10px;stroke:#a8a29e;fill:none;stroke-width:2;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
           <div style="display:flex;gap:5px;padding:7px 10px 6px;overflow:hidden;background:white;border-bottom:1px solid #e7e5e4;flex-shrink:0;" class="a2">
-            <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 8px;background:#fff7ed;border-radius:9px;border:2px solid var(--orange);flex-shrink:0;"><span style="font-size:.7rem;">✨</span><span style="font-family:'Syne',sans-serif;font-weight:700;font-size:.43rem;">All</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 8px;background:#fff0f0;border-radius:9px;border:2px solid var(--burgundy);flex-shrink:0;"><span style="font-size:.7rem;">✨</span><span style="font-family:'Syne',sans-serif;font-weight:700;font-size:.43rem;">All</span></div>
             <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 8px;background:#f5f5f4;border-radius:9px;flex-shrink:0;"><span style="font-size:.7rem;">🎨</span><span style="font-family:'Syne',sans-serif;font-weight:700;font-size:.43rem;">Design</span></div>
             <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 8px;background:#f5f5f4;border-radius:9px;flex-shrink:0;"><span style="font-size:.7rem;">📱</span><span style="font-family:'Syne',sans-serif;font-weight:700;font-size:.43rem;">Social</span></div>
             <div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 8px;background:#f5f5f4;border-radius:9px;flex-shrink:0;"><span style="font-size:.7rem;">📊</span><span style="font-family:'Syne',sans-serif;font-weight:700;font-size:.43rem;">Data</span></div>
@@ -189,13 +196,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
           <div style="flex:1;overflow:hidden;padding:7px 10px 0;background:#f5f5f4;">
             <p class="stag" style="margin-bottom:5px;">Featured Jobs — 24 Open</p>
             <div class="cw a3">
-              <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div class="av" style="background:linear-gradient(135deg,#f97316,#c2410c);">RK</div><div style="flex:1;"><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.52rem;color:#78716c;">Rwanda Komeza Ltd</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.74rem;color:#1c1917;">Graphic Designer</div></div><span class="tgg">Open</span></div>
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div class="av" style="background:linear-gradient(135deg,#800000,#5a0000);">RK</div><div style="flex:1;"><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.52rem;color:#78716c;">Rwanda Komeza Ltd</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.74rem;color:#1c1917;">Graphic Designer</div></div><span class="tgg">Open</span></div>
               <p style="font-size:.57rem;color:#78716c;line-height:1.5;margin-bottom:5px;">Create social media graphics & banners for a growing Kigali startup. 2–3 week project.</p>
-              <div style="display:flex;gap:3px;align-items:center;"><span class="tgo">Design</span><span class="tgs">Remote</span><span class="tgs">2–3 wks</span><span style="margin-left:auto;font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;color:var(--orange);">15K RWF</span></div>
+              <div style="display:flex;gap:3px;align-items:center;"><span class="tgo">Design</span><span class="tgs">Remote</span><span class="tgs">2–3 wks</span><span style="margin-left:auto;font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;color:var(--burgundy);">15K RWF</span></div>
             </div>
             <div class="cw a4">
-              <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div class="av" style="background:linear-gradient(135deg,#2563eb,#1e40af);">MM</div><div style="flex:1;"><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.52rem;color:#78716c;">Mutuza Market</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.74rem;color:#1c1917;">Social Media Manager</div></div><span class="tgg">Open</span></div>
-              <div style="display:flex;gap:3px;align-items:center;"><span class="tgo" style="background:#eff6ff;color:#2563eb;border-color:#bfdbfe;">Social</span><span class="tgs">Hybrid</span><span class="tgs">Monthly</span><span style="margin-left:auto;font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;color:var(--orange);">25K RWF</span></div>
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div class="av" style="background:linear-gradient(135deg,#6b0000,#3a0000);">MM</div><div style="flex:1;"><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.52rem;color:#78716c;">Mutuza Market</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.74rem;color:#1c1917;">Social Media Manager</div></div><span class="tgg">Open</span></div>
+              <div style="display:flex;gap:3px;align-items:center;"><span class="tgo">Social</span><span class="tgs">Hybrid</span><span class="tgs">Monthly</span><span style="margin-left:auto;font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;color:var(--burgundy);">25K RWF</span></div>
             </div>
           </div>
           <div class="bnav a5">
@@ -208,24 +215,24 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
 
         <!-- SLIDE 1: Job Detail -->
         <div class="slide" id="slide-1">
-          <div style="background:linear-gradient(135deg,#1c1917,#292524);padding:10px 11px 13px;flex-shrink:0;" class="a1">
-            <button style="display:inline-flex;align-items:center;gap:4px;font-family:'Syne',sans-serif;font-weight:700;font-size:.58rem;color:#a8a29e;background:none;border:none;margin-bottom:8px;cursor:pointer;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a8a29e" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>Back to Jobs</button>
-            <div style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);border-radius:7px;padding:4px 8px;margin-bottom:7px;"><div class="av" style="width:20px;height:20px;border-radius:5px;background:linear-gradient(135deg,#f97316,#c2410c);font-size:.5rem;">RK</div><span style="font-family:'Syne',sans-serif;font-weight:700;font-size:.6rem;color:#e7e5e4;">Rwanda Komeza Ltd</span><span class="tgg" style="font-size:.45rem;padding:1px 5px;">Verified ✓</span></div>
-            <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.9rem;color:white;line-height:1.2;margin-bottom:9px;" class="a2">Graphic Designer<br/><span style="color:var(--orange);">for Social Media</span></div>
+          <div style="background:linear-gradient(135deg,#1a0000,#2d0000);padding:10px 11px 13px;flex-shrink:0;" class="a1">
+            <button style="display:inline-flex;align-items:center;gap:4px;font-family:'Syne',sans-serif;font-weight:700;font-size:.58rem;color:#a08080;background:none;border:none;margin-bottom:8px;cursor:pointer;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a08080" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>Back to Jobs</button>
+            <div style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);border-radius:7px;padding:4px 8px;margin-bottom:7px;"><div class="av" style="width:20px;height:20px;border-radius:5px;background:linear-gradient(135deg,#800000,#5a0000);font-size:.5rem;">RK</div><span style="font-family:'Syne',sans-serif;font-weight:700;font-size:.6rem;color:#e7e5e4;">Rwanda Komeza Ltd</span><span class="tgg" style="font-size:.45rem;padding:1px 5px;">Verified ✓</span></div>
+            <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.9rem;color:white;line-height:1.2;margin-bottom:9px;" class="a2">Graphic Designer<br/><span style="color:#e08080;">for Social Media</span></div>
             <div style="display:flex;gap:12px;" class="a2">
-              <div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;color:var(--orange);">15K RWF</div><div style="font-size:.47rem;color:#78716c;">Budget</div></div>
-              <div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;color:var(--orange);">2–3 wks</div><div style="font-size:.47rem;color:#78716c;">Duration</div></div>
-              <div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;color:var(--orange);">Remote</div><div style="font-size:.47rem;color:#78716c;">Location</div></div>
-              <div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;color:var(--orange);">12</div><div style="font-size:.47rem;color:#78716c;">Applied</div></div>
+              <div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;color:#e08080;">15K RWF</div><div style="font-size:.47rem;color:#78716c;">Budget</div></div>
+              <div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;color:#e08080;">2–3 wks</div><div style="font-size:.47rem;color:#78716c;">Duration</div></div>
+              <div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;color:#e08080;">Remote</div><div style="font-size:.47rem;color:#78716c;">Location</div></div>
+              <div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;color:#e08080;">12</div><div style="font-size:.47rem;color:#78716c;">Applied</div></div>
             </div>
           </div>
           <div style="flex:1;overflow:hidden;padding:8px 10px;background:#f5f5f4;">
             <div class="cw a3">
               <p class="stag" style="margin-bottom:5px;">What You'll Do</p>
               <div style="display:flex;flex-direction:column;gap:4px;">
-                <div style="display:flex;align-items:flex-start;gap:5px;font-size:.57rem;color:#44403c;line-height:1.5;"><div style="width:4px;height:4px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:3px;"></div>Design Instagram posts, stories & Facebook banners</div>
-                <div style="display:flex;align-items:flex-start;gap:5px;font-size:.57rem;color:#44403c;line-height:1.5;"><div style="width:4px;height:4px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:3px;"></div>Deliver 8–10 final graphics within 2 weeks</div>
-                <div style="display:flex;align-items:flex-start;gap:5px;font-size:.57rem;color:#44403c;line-height:1.5;"><div style="width:4px;height:4px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:3px;"></div>Use Canva or Adobe Illustrator — remote work</div>
+                <div style="display:flex;align-items:flex-start;gap:5px;font-size:.57rem;color:#44403c;line-height:1.5;"><div style="width:4px;height:4px;border-radius:50%;background:var(--burgundy);flex-shrink:0;margin-top:3px;"></div>Design Instagram posts, stories & Facebook banners</div>
+                <div style="display:flex;align-items:flex-start;gap:5px;font-size:.57rem;color:#44403c;line-height:1.5;"><div style="width:4px;height:4px;border-radius:50%;background:var(--burgundy);flex-shrink:0;margin-top:3px;"></div>Deliver 8–10 final graphics within 2 weeks</div>
+                <div style="display:flex;align-items:flex-start;gap:5px;font-size:.57rem;color:#44403c;line-height:1.5;"><div style="width:4px;height:4px;border-radius:50%;background:var(--burgundy);flex-shrink:0;margin-top:3px;"></div>Use Canva or Adobe Illustrator — remote work</div>
               </div>
             </div>
             <div class="cw a4">
@@ -235,9 +242,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
                 <div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.78rem;color:#1c1917;">7 jobs</div><div style="font-size:.48rem;color:#78716c;">Posted</div></div>
                 <div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.78rem;color:#1c1917;">95%</div><div style="font-size:.48rem;color:#78716c;">Hire Rate</div></div>
               </div>
-              <div style="color:#f59e0b;font-size:.6rem;">★★★★★</div>
+              <div style="color:#c9a84c;font-size:.6rem;">★★★★★</div>
             </div>
-            <button style="width:100%;background:var(--orange);color:white;border:none;border-radius:9px;padding:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;cursor:pointer;box-shadow:0 4px 12px rgba(249,115,22,.3);" class="a5">Apply Now →</button>
+            <button style="width:100%;background:var(--burgundy);color:white;border:none;border-radius:9px;padding:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;cursor:pointer;box-shadow:0 4px 12px var(--burgundy-glow);" class="a5">Apply Now →</button>
           </div>
           <div class="bnav"><div class="bni"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></div><div class="bni a"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><span>Jobs</span></div><div class="bni"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span>Post</span></div><div class="bni"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></div></div>
         </div>
@@ -254,7 +261,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
                 <div class="a3"><div class="fl">Cover Message</div><textarea class="fi foc" rows="2" style="resize:none;" readonly>I'm a designer with 2 years of Canva experience. I'd love to create vibrant social graphics for your brand and can deliver within your 2-week timeline…</textarea></div>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;" class="a4"><div><div class="fl">Your Rate (RWF)</div><input class="fi" value="14,000" readonly/></div><div><div class="fl">Start Date</div><input class="fi" value="This Monday" readonly/></div></div>
                 <div class="a4"><div class="fl">Portfolio Link</div><input class="fi" value="amina.portfolio.rw" readonly/></div>
-                <button style="width:100%;background:var(--orange);color:white;border:none;border-radius:8px;padding:9px;font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;cursor:pointer;box-shadow:0 4px 12px rgba(249,115,22,.3);margin-top:2px;" class="a5">Submit Application →</button>
+                <button style="width:100%;background:var(--burgundy);color:white;border:none;border-radius:8px;padding:9px;font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;cursor:pointer;box-shadow:0 4px 12px var(--burgundy-glow);margin-top:2px;" class="a5">Submit Application →</button>
               </div>
             </div>
           </div>
@@ -262,11 +269,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
 
         <!-- SLIDE 3: Youth Profile -->
         <div class="slide" id="slide-3">
-          <div style="background:linear-gradient(135deg,#f97316,#c2410c);padding:15px 11px 12px;text-align:center;flex-shrink:0;" class="a1">
-            <div style="width:50px;height:50px;border-radius:14px;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:white;margin:0 auto 7px;border:2px solid rgba(255,255,255,.4);">AK</div>
+          <div style="background:linear-gradient(135deg,#800000,#4a0000);padding:15px 11px 12px;text-align:center;flex-shrink:0;" class="a1">
+            <div style="width:50px;height:50px;border-radius:14px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:white;margin:0 auto 7px;border:2px solid rgba(255,255,255,.35);">AK</div>
             <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.88rem;color:white;">Amina Kagabo</div>
-            <div style="font-size:.58rem;color:rgba(255,255,255,.8);margin-top:2px;">Graphic Designer · Kigali, Rwanda</div>
-            <div style="display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.15);border-radius:99px;padding:3px 9px;margin-top:6px;"><span style="color:#fbbf24;font-size:.6rem;">★</span><span style="font-family:'Syne',sans-serif;font-weight:700;font-size:.58rem;color:white;">4.9 · 18 verified reviews</span></div>
+            <div style="font-size:.58rem;color:rgba(255,255,255,.75);margin-top:2px;">Graphic Designer · Kigali, Rwanda</div>
+            <div style="display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.15);border-radius:99px;padding:3px 9px;margin-top:6px;"><span style="color:#c9a84c;font-size:.6rem;">★</span><span style="font-family:'Syne',sans-serif;font-weight:700;font-size:.58rem;color:white;">4.9 · 18 verified reviews</span></div>
             <div style="display:flex;justify-content:center;gap:13px;margin-top:7px;" class="a2">
               <div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.82rem;color:white;">12</div><div style="font-size:.47rem;color:rgba(255,255,255,.7);">Jobs Done</div></div>
               <div style="width:1px;background:rgba(255,255,255,.2);"></div>
@@ -277,19 +284,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
           </div>
           <div style="flex:1;overflow:hidden;padding:8px 10px;background:#f5f5f4;">
             <div class="cw a3"><p class="stag" style="margin-bottom:5px;">Skills</p><div style="display:flex;flex-wrap:wrap;gap:3px;"><span class="tgo">Canva</span><span class="tgo">Adobe Illustrator</span><span class="tgo">Social Media</span><span class="tgs">Photoshop</span><span class="tgs">Typography</span></div></div>
-            <div class="cw a4"><p class="stag" style="margin-bottom:5px;">Portfolio</p><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;"><div style="aspect-ratio:1;border-radius:7px;background:linear-gradient(135deg,#fed7aa,#f97316);display:flex;align-items:center;justify-content:center;font-size:.75rem;">🎨</div><div style="aspect-ratio:1;border-radius:7px;background:linear-gradient(135deg,#bfdbfe,#2563eb);display:flex;align-items:center;justify-content:center;font-size:.75rem;">📱</div><div style="aspect-ratio:1;border-radius:7px;background:linear-gradient(135deg,#bbf7d0,#059669);display:flex;align-items:center;justify-content:center;font-size:.75rem;">✨</div><div style="aspect-ratio:1;border-radius:7px;background:linear-gradient(135deg,#e9d5ff,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:.75rem;">🖋️</div></div></div>
-            <div class="cw a5"><p class="stag" style="margin-bottom:5px;">Latest Review</p><div style="display:flex;align-items:center;gap:5px;margin-bottom:4px;"><div class="av" style="width:20px;height:20px;border-radius:5px;font-size:.46rem;background:linear-gradient(135deg,#f97316,#c2410c);">RK</div><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.62rem;color:#1c1917;">Rwanda Komeza</div><div style="color:#f59e0b;font-size:.57rem;margin-left:auto;">★★★★★</div></div><p style="font-size:.58rem;color:#78716c;line-height:1.5;font-style:italic;">"Stunning designs, delivered ahead of schedule. Highly recommend!"</p></div>
+            <div class="cw a4"><p class="stag" style="margin-bottom:5px;">Portfolio</p><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;"><div style="aspect-ratio:1;border-radius:7px;background:linear-gradient(135deg,#f0c0c0,#800000);display:flex;align-items:center;justify-content:center;font-size:.75rem;">🎨</div><div style="aspect-ratio:1;border-radius:7px;background:linear-gradient(135deg,#c9a84c,#8a6000);display:flex;align-items:center;justify-content:center;font-size:.75rem;">📱</div><div style="aspect-ratio:1;border-radius:7px;background:linear-gradient(135deg,#ffd0d0,#600000);display:flex;align-items:center;justify-content:center;font-size:.75rem;">✨</div><div style="aspect-ratio:1;border-radius:7px;background:linear-gradient(135deg,#e9d5ff,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:.75rem;">🖋️</div></div></div>
+            <div class="cw a5"><p class="stag" style="margin-bottom:5px;">Latest Review</p><div style="display:flex;align-items:center;gap:5px;margin-bottom:4px;"><div class="av" style="width:20px;height:20px;border-radius:5px;font-size:.46rem;background:linear-gradient(135deg,#800000,#5a0000);">RK</div><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.62rem;color:#1c1917;">Rwanda Komeza</div><div style="color:#c9a84c;font-size:.57rem;margin-left:auto;">★★★★★</div></div><p style="font-size:.58rem;color:#78716c;line-height:1.5;font-style:italic;">"Stunning designs, delivered ahead of schedule. Highly recommend!"</p></div>
           </div>
           <div class="bnav"><div class="bni"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></div><div class="bni"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><span>Jobs</span></div><div class="bni"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span>Post</span></div><div class="bni a"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></div></div>
         </div>
 
         <!-- SLIDE 4: Post a Job -->
         <div class="slide" id="slide-4">
-          <div style="background:#0c0a09;padding:12px 11px 14px;flex-shrink:0;" class="a1">
-            <p class="stag" style="margin-bottom:2px;color:#fb923c;">For Businesses</p>
+          <div style="background:#0c0000;padding:12px 11px 14px;flex-shrink:0;" class="a1">
+            <p class="stag" style="margin-bottom:2px;color:#e08080;">For Businesses</p>
             <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:.9rem;color:white;">Post a Digital Job</p>
             <p style="font-size:.56rem;color:#78716c;margin-top:2px;">Reach skilled young Rwandans in minutes.</p>
-            <div style="display:flex;gap:4px;margin-top:9px;" class="a2"><div style="height:3px;border-radius:99px;background:var(--orange);flex:1;"></div><div style="height:3px;border-radius:99px;background:rgba(255,255,255,.15);flex:1;"></div><div style="height:3px;border-radius:99px;background:rgba(255,255,255,.15);flex:1;"></div></div>
+            <div style="display:flex;gap:4px;margin-top:9px;" class="a2"><div style="height:3px;border-radius:99px;background:var(--burgundy);flex:1;"></div><div style="height:3px;border-radius:99px;background:rgba(255,255,255,.15);flex:1;"></div><div style="height:3px;border-radius:99px;background:rgba(255,255,255,.15);flex:1;"></div></div>
           </div>
           <div style="flex:1;overflow:hidden;padding:9px 11px;background:#f5f5f4;">
             <p style="font-family:'Syne',sans-serif;font-weight:700;font-size:.5rem;color:#78716c;margin-bottom:8px;letter-spacing:.08em;">STEP 1 OF 3 — JOB BASICS</p>
@@ -297,8 +304,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
               <div class="a3"><div class="fl">Job Title *</div><input class="fi foc" value="Social Media Manager" readonly/></div>
               <div class="a4"><div class="fl">Category *</div><select class="fi" style="appearance:none;"><option>Social Media Management</option></select></div>
               <div class="a4"><div class="fl">Description *</div><textarea class="fi" rows="3" style="resize:none;" readonly>Manage our Instagram & Twitter. Create 3 posts/week, engage followers, and report monthly analytics.</textarea></div>
-              <div class="a5" style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:7px;display:flex;gap:5px;"><span style="font-size:.7rem;">💡</span><p style="font-size:.55rem;color:#92400e;line-height:1.5;">More detail = better matched applicants.</p></div>
-              <button style="width:100%;background:var(--orange);color:white;border:none;border-radius:8px;padding:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:.66rem;cursor:pointer;box-shadow:0 4px 12px rgba(249,115,22,.3);" class="a5">Continue →</button>
+              <div class="a5" style="background:#fff0f0;border:1px solid #f0c0c0;border-radius:8px;padding:7px;display:flex;gap:5px;"><span style="font-size:.7rem;">💡</span><p style="font-size:.55rem;color:#600000;line-height:1.5;">More detail = better matched applicants.</p></div>
+              <button style="width:100%;background:var(--burgundy);color:white;border:none;border-radius:8px;padding:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:.66rem;cursor:pointer;box-shadow:0 4px 12px var(--burgundy-glow);" class="a5">Continue →</button>
             </div>
           </div>
           <div class="bnav"><div class="bni"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></div><div class="bni"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><span>Jobs</span></div><div class="bni a"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span>Post</span></div><div class="bni"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></div></div>
@@ -308,35 +315,35 @@ body{font-family:'DM Sans',sans-serif;background:var(--s950);min-height:100vh;di
         <div class="slide" id="slide-5" style="background:#f5f5f4;">
           <div class="sbar a1" style="flex-shrink:0;"><div class="logo">Nasna<span>Jobs</span></div><span style="font-family:'Syne',sans-serif;font-weight:700;font-size:.55rem;color:rgba(255,255,255,.8);">Leave a Review</span></div>
           <div style="flex:1;overflow:hidden;padding:9px 11px;">
-            <div class="cw a2"><p class="stag" style="margin-bottom:7px;">Job Completed 🎉</p><div style="display:flex;align-items:center;gap:7px;margin-bottom:6px;"><div class="av" style="background:linear-gradient(135deg,#f97316,#c2410c);">RK</div><div><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.67rem;color:#1c1917;">Rwanda Komeza Ltd</div><div style="font-size:.56rem;color:#78716c;">Graphic Design · 15,000 RWF</div></div><span class="tgg" style="margin-left:auto;">Done ✓</span></div></div>
-            <div class="cw a3"><p class="stag" style="margin-bottom:7px;">Rate Your Experience</p><p style="font-size:.58rem;color:#78716c;margin-bottom:7px;">How was working with Rwanda Komeza?</p><div style="display:flex;gap:4px;justify-content:center;margin-bottom:8px;"><span style="font-size:1.3rem;color:#f59e0b;">★</span><span style="font-size:1.3rem;color:#f59e0b;">★</span><span style="font-size:1.3rem;color:#f59e0b;">★</span><span style="font-size:1.3rem;color:#f59e0b;">★</span><span style="font-size:1.3rem;color:#d6d3d1;">★</span></div><div style="color:#f59e0b;text-align:center;font-family:'Syne',sans-serif;font-weight:700;font-size:.65rem;margin-bottom:7px;">4 out of 5 — Great!</div><textarea class="fi" rows="2" style="resize:none;" readonly>Professional, quick to respond, and paid on time. Great client to work with!</textarea></div>
-            <div class="cw a4"><p class="stag" style="margin-bottom:6px;">Badge Unlocked</p><div style="display:flex;align-items:center;gap:7px;"><div style="width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#f97316,#c2410c);display:flex;align-items:center;justify-content:center;font-size:.9rem;">🏅</div><div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.68rem;color:#1c1917;">Top Rated Designer</div><div style="font-size:.55rem;color:#78716c;">Unlocked after 10 completed jobs</div></div></div></div>
-            <button style="width:100%;background:var(--orange);color:white;border:none;border-radius:8px;padding:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:.66rem;cursor:pointer;box-shadow:0 4px 12px rgba(249,115,22,.3);margin-top:6px;" class="a5">Submit Review →</button>
+            <div class="cw a2"><p class="stag" style="margin-bottom:7px;">Job Completed 🎉</p><div style="display:flex;align-items:center;gap:7px;margin-bottom:6px;"><div class="av" style="background:linear-gradient(135deg,#800000,#5a0000);">RK</div><div><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.67rem;color:#1c1917;">Rwanda Komeza Ltd</div><div style="font-size:.56rem;color:#78716c;">Graphic Design · 15,000 RWF</div></div><span class="tgg" style="margin-left:auto;">Done ✓</span></div></div>
+            <div class="cw a3"><p class="stag" style="margin-bottom:7px;">Rate Your Experience</p><p style="font-size:.58rem;color:#78716c;margin-bottom:7px;">How was working with Rwanda Komeza?</p><div style="display:flex;gap:4px;justify-content:center;margin-bottom:8px;"><span style="font-size:1.3rem;color:#c9a84c;">★</span><span style="font-size:1.3rem;color:#c9a84c;">★</span><span style="font-size:1.3rem;color:#c9a84c;">★</span><span style="font-size:1.3rem;color:#c9a84c;">★</span><span style="font-size:1.3rem;color:#d6d3d1;">★</span></div><div style="color:#c9a84c;text-align:center;font-family:'Syne',sans-serif;font-weight:700;font-size:.65rem;margin-bottom:7px;">4 out of 5 — Great!</div><textarea class="fi" rows="2" style="resize:none;" readonly>Professional, quick to respond, and paid on time. Great client to work with!</textarea></div>
+            <div class="cw a4"><p class="stag" style="margin-bottom:6px;">Badge Unlocked</p><div style="display:flex;align-items:center;gap:7px;"><div style="width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#800000,#5a0000);display:flex;align-items:center;justify-content:center;font-size:.9rem;">🏅</div><div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:.68rem;color:#1c1917;">Top Rated Designer</div><div style="font-size:.55rem;color:#78716c;">Unlocked after 10 completed jobs</div></div></div></div>
+            <button style="width:100%;background:var(--burgundy);color:white;border:none;border-radius:8px;padding:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:.66rem;cursor:pointer;box-shadow:0 4px 12px var(--burgundy-glow);margin-top:6px;" class="a5">Submit Review →</button>
           </div>
           <div class="bnav"><div class="bni a"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></div><div class="bni"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><span>Jobs</span></div><div class="bni"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span>Post</span></div><div class="bni"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></div></div>
         </div>
 
         <!-- SLIDE 6: Success -->
         <div class="slide" id="slide-6" style="background:white;align-items:center;justify-content:center;padding:18px 15px;text-align:center;">
-          <div style="width:58px;height:58px;border-radius:17px;background:linear-gradient(135deg,#f97316,#c2410c);display:flex;align-items:center;justify-content:center;margin:0 auto 13px;box-shadow:0 10px 28px rgba(249,115,22,.35);" class="a1"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div style="width:58px;height:58px;border-radius:17px;background:linear-gradient(135deg,#800000,#4a0000);display:flex;align-items:center;justify-content:center;margin:0 auto 13px;box-shadow:0 10px 28px var(--burgundy-glow);" class="a1"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;color:#1c1917;margin-bottom:6px;" class="a2">Job Live on Nasna Jobs! 🎉</p>
           <p style="font-size:.62rem;color:#78716c;line-height:1.65;margin-bottom:12px;" class="a3">Your listing is now visible to hundreds of skilled youth across Rwanda. Matching applicants will start arriving within hours.</p>
           <div style="background:#f5f5f4;border-radius:11px;padding:10px;width:100%;text-align:left;margin-bottom:11px;" class="a4">
             <p class="stag" style="margin-bottom:7px;">What Happens Next</p>
             <div style="display:flex;flex-direction:column;gap:6px;">
-              <div style="display:flex;align-items:center;gap:6px;font-size:.58rem;color:#44403c;"><div style="width:17px;height:17px;border-radius:5px;background:var(--orange);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Syne',sans-serif;font-weight:800;font-size:.5rem;color:white;">1</div>Youth with matching skills see & apply to your listing</div>
-              <div style="display:flex;align-items:center;gap:6px;font-size:.58rem;color:#44403c;"><div style="width:17px;height:17px;border-radius:5px;background:var(--orange);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Syne',sans-serif;font-weight:800;font-size:.5rem;color:white;">2</div>You review profiles, portfolios & star ratings</div>
-              <div style="display:flex;align-items:center;gap:6px;font-size:.58rem;color:#44403c;"><div style="width:17px;height:17px;border-radius:5px;background:var(--orange);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Syne',sans-serif;font-weight:800;font-size:.5rem;color:white;">3</div>Select, agree on terms, work gets delivered</div>
-              <div style="display:flex;align-items:center;gap:6px;font-size:.58rem;color:#44403c;"><div style="width:17px;height:17px;border-radius:5px;background:var(--orange);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Syne',sans-serif;font-weight:800;font-size:.5rem;color:white;">4</div>Both sides rate each other — building platform trust</div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:.58rem;color:#44403c;"><div style="width:17px;height:17px;border-radius:5px;background:var(--burgundy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Syne',sans-serif;font-weight:800;font-size:.5rem;color:white;">1</div>Youth with matching skills see & apply to your listing</div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:.58rem;color:#44403c;"><div style="width:17px;height:17px;border-radius:5px;background:var(--burgundy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Syne',sans-serif;font-weight:800;font-size:.5rem;color:white;">2</div>You review profiles, portfolios & star ratings</div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:.58rem;color:#44403c;"><div style="width:17px;height:17px;border-radius:5px;background:var(--burgundy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Syne',sans-serif;font-weight:800;font-size:.5rem;color:white;">3</div>Select, agree on terms, work gets delivered</div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:.58rem;color:#44403c;"><div style="width:17px;height:17px;border-radius:5px;background:var(--burgundy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Syne',sans-serif;font-weight:800;font-size:.5rem;color:white;">4</div>Both sides rate each other — building platform trust</div>
             </div>
           </div>
-          <button style="width:100%;background:var(--orange);color:white;border:none;border-radius:8px;padding:9px;font-family:'Syne',sans-serif;font-weight:700;font-size:.67rem;cursor:pointer;box-shadow:0 4px 12px rgba(249,115,22,.3);" class="a5">Back to Home →</button>
+          <button style="width:100%;background:var(--burgundy);color:white;border:none;border-radius:8px;padding:9px;font-family:'Syne',sans-serif;font-weight:700;font-size:.67rem;cursor:pointer;box-shadow:0 4px 12px var(--burgundy-glow);" class="a5">Back to Home →</button>
         </div>
 
         <div class="cursor" id="cursor"></div>
       </div>
     </div>
-    <p style="text-align:center;font-family:'Syne',sans-serif;font-weight:700;font-size:.55rem;color:#3d3936;margin-top:9px;letter-spacing:.06em;text-transform:uppercase;">Auto-plays · Click any scene to jump</p>
+    <p style="text-align:center;font-family:'Syne',sans-serif;font-weight:700;font-size:.55rem;color:#4a2020;margin-top:9px;letter-spacing:.06em;text-transform:uppercase;">Auto-plays · Click any scene to jump</p>
   </div>
 
 </div><!-- /stage -->
@@ -433,7 +440,6 @@ const SCENES = [
 let cur=0, playing=false, ticker=null, elapsed=0;
 const totalTime = SCENES.reduce((a,s)=>a+s.dur,0);
 
-// Build progress bar
 const pb = document.getElementById('prog');
 SCENES.forEach((_,i)=>{
   const d=document.createElement('div');
@@ -442,7 +448,6 @@ SCENES.forEach((_,i)=>{
   pb.appendChild(d);
 });
 
-// Build scene list
 const sl = document.getElementById('slist');
 SCENES.forEach((s,i)=>{
   const el=document.createElement('div');
@@ -466,7 +471,6 @@ function showActions(idx){
     el.appendChild(div);
     aTimers.push(setTimeout(()=>div.classList.add('vis'), i*150+80));
   });
-  // Cycle highlight
   const perStep=(SCENES[idx].dur*1000)/(acts.length+1);
   acts.forEach((_,i)=>{
     aTimers.push(setTimeout(()=>{
@@ -569,7 +573,6 @@ function animateCursor(){
 }
 
 updateUI();
-// Don't auto-start — wait for user to press play to avoid unwanted scroll on the parent page
 </script>
 </body>
 </html>
