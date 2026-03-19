@@ -370,17 +370,34 @@
     #main-header:not(.scrolled) #mobile-menu a:hover { color: #fff !important; }
     #main-header:not(.scrolled) .ham-bar { background: rgba(255,255,255,0.9) !important; }
     .nav-desktop a.active, .nav-desktop a:hover { color: var(--burgundy) !important; }
-    #mobile-menu { background: transparent; border-top: 1px solid transparent; transition: background 0.35s ease, border-color 0.35s ease; }
-    #main-header.scrolled #mobile-menu { background: rgba(249,240,240,0.96); border-top: 1px solid rgba(128,0,0,0.12); }
+    /* Logo size responsive */
+    #main-header .logo-img { height: 3.5rem; }
+    @media (max-width: 767px) { #main-header .logo-img { height: 2.2rem; } }
+
+    /* Mobile menu transparent over home, opaque when scrolled */
+    #mobile-menu {
+      background: transparent;
+      border-top: 1px solid transparent;
+      transition: background 0.35s ease, border-color 0.35s ease;
+    }
+    #main-header.scrolled #mobile-menu {
+      background: rgba(249,240,240,0.96);
+      border-top: 1px solid rgba(128,0,0,0.12);
+    }
+    /* Mobile menu link dividers invisible when transparent */
+    #main-header:not(.scrolled) #mobile-menu a {
+      border-color: rgba(255,255,255,0.15) !important;
+      color: rgba(255,255,255,0.9) !important;
+    }
   </style>
 </head>
 <body style="background:#fff; color:#1a0000; overflow-x:hidden; font-family:'DM Sans',sans-serif;">
 
 <!-- ===== HEADER ===== -->
 <header id="main-header" class="fixed top-0 left-0 right-0 z-50">
-  <div class="max-w-6xl mx-auto flex items-center justify-between px-6 h-[72px]">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 md:px-6 h-[56px] md:h-[72px]">
     <a href="#" onclick="closeMobileMenu()">
-      <img src="nasna logo.png" alt="NASNA Logo" class="h-14 w-auto" />
+      <img src="nasna logo.png" alt="NASNA Logo" class="logo-img w-auto" />
     </a>
 
     <nav class="nav-desktop hidden md:flex items-center gap-1" style="font-family:'Syne',sans-serif; font-weight:600;">
@@ -462,7 +479,7 @@
   });
 </script>
 
-<div id="home" class=" home-hero-wrap" style="position:relative; overflow:hidden;">
+<div id="home" class="pt-[72px] home-hero-wrap" style="position:relative; overflow:hidden;">
 
   <style>
     @media (min-width: 768px) {
@@ -800,7 +817,7 @@
     <h2 class="section-heading" style="font-size:clamp(2.2rem,5vw,3.5rem);margin-top:8px;color:#fff;">
       Platform <em style="color:#c9a84c;">Demo</em>
     </h2>
-    <p style="margin-top:16px;color:rgba(255,255,255,0.45);max-width:480px;line-height:1.75;">Watch Nasna Jobs in action — an animated walkthrough showing how the platform works for both youth and businesses, screen by screen.</p>
+    <p style="margin-top:16px;color:rgba(255,255,255,0.45);max-width:480px;line-height:1.75;">Watch KaziYetu in action — an animated walkthrough showing how the platform works for both youth and businesses, screen by screen.</p>
 
     <div style="margin-top:48px;border-radius:24px;overflow:hidden;border:1px solid rgba(200,0,0,0.3);box-shadow:0 40px 80px rgba(0,0,0,0.5);">
       <iframe data-src="demo.html" class="w-full border-0 block" style="height:680px;" title="NASNA Jobs Platform Demo" tabindex="-1" id="demo-iframe"></iframe>
