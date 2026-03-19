@@ -348,19 +348,20 @@
 
     /* ---- Nav ---- */
     #main-header {
-      background: transparent;
-      backdrop-filter: blur(0px);
+      background: transparent !important;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
       border-bottom: 1px solid transparent;
       box-shadow: none;
       transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
     }
     #main-header.scrolled {
-      background: rgba(249,240,240,0.96);
+      background: rgba(249,240,240,0.96) !important;
       backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(128,0,0,0.12);
       box-shadow: 0 1px 12px rgba(128,0,0,0.07);
     }
-    /* Nav links white when transparent, dark when scrolled */
     #main-header .nav-link { transition: color 0.25s ease; }
     #main-header:not(.scrolled) .nav-link { color: rgba(255,255,255,0.9) !important; }
     #main-header:not(.scrolled) .nav-link:hover { color: #fff !important; }
@@ -370,24 +371,16 @@
     #main-header:not(.scrolled) #mobile-menu a:hover { color: #fff !important; }
     #main-header:not(.scrolled) .ham-bar { background: rgba(255,255,255,0.9) !important; }
     .nav-desktop a.active, .nav-desktop a:hover { color: var(--burgundy) !important; }
-    /* Logo size responsive */
     #main-header .logo-img { height: 3.5rem; }
     @media (max-width: 767px) { #main-header .logo-img { height: 2.2rem; } }
-
-    /* Mobile menu transparent over home, opaque when scrolled */
     #mobile-menu {
-      background: transparent;
-      border-top: 1px solid transparent;
+      background: transparent !important;
+      border-top: 1px solid transparent !important;
       transition: background 0.35s ease, border-color 0.35s ease;
     }
     #main-header.scrolled #mobile-menu {
-      background: rgba(249,240,240,0.96);
-      border-top: 1px solid rgba(128,0,0,0.12);
-    }
-    /* Mobile menu link dividers invisible when transparent */
-    #main-header:not(.scrolled) #mobile-menu a {
-      border-color: rgba(255,255,255,0.15) !important;
-      color: rgba(255,255,255,0.9) !important;
+      background: rgba(249,240,240,0.96) !important;
+      border-top: 1px solid rgba(128,0,0,0.12) !important;
     }
   </style>
 </head>
