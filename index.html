@@ -348,10 +348,26 @@
 
     /* ---- Nav ---- */
     #main-header {
+      background: transparent;
+      backdrop-filter: blur(0px);
+      border-bottom: 1px solid transparent;
+      box-shadow: none;
+      transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
+    }
+    #main-header.scrolled {
       background: rgba(249,240,240,0.96);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(128,0,0,0.12);
+      box-shadow: 0 1px 12px rgba(128,0,0,0.07);
     }
+    /* Nav links white when transparent, dark when scrolled */
+    #main-header .nav-link { transition: color 0.25s ease; }
+    #main-header:not(.scrolled) .nav-link { color: rgba(255,255,255,0.9) !important; }
+    #main-header:not(.scrolled) .nav-link:hover { color: #fff !important; }
+    #main-header:not(.scrolled) .nav-link.active { color: #fff !important; }
+    #main-header.scrolled .nav-link { color: #1a0000; }
+    /* Hamburger bars white when transparent */
+    #main-header:not(.scrolled) .ham-bar { background: rgba(255,255,255,0.9) !important; }
     .nav-desktop a.active, .nav-desktop a:hover { color: var(--burgundy) !important; }
     #mobile-menu { background: var(--burgundy-pale); border-top: 1px solid rgba(128,0,0,0.12); }
   </style>
@@ -359,7 +375,7 @@
 <body style="background:#fff; color:#1a0000; overflow-x:hidden; font-family:'DM Sans',sans-serif;">
 
 <!-- ===== HEADER ===== -->
-<header id="main-header" class="fixed top-0 left-0 right-0 z-50 shadow-sm">
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50">
   <div class="max-w-6xl mx-auto flex items-center justify-between px-6 h-[72px]">
     <a href="#" onclick="closeMobileMenu()">
       <img src="nasna logo.png" alt="NASNA Logo" class="h-14 w-auto" />
@@ -375,9 +391,9 @@
     </nav>
 
     <button id="hamburger" onclick="toggleMobileMenu()" class="md:hidden flex flex-col gap-[5px] p-2 cursor-pointer bg-transparent border-none" aria-label="Toggle menu" aria-expanded="false">
-      <span class="bar1 block w-6 h-0.5 rounded transition-all duration-300 origin-center" style="background:#800000;"></span>
-      <span class="bar2 block w-6 h-0.5 rounded transition-all duration-300" style="background:#800000;"></span>
-      <span class="bar3 block w-6 h-0.5 rounded transition-all duration-300 origin-center" style="background:#800000;"></span>
+      <span class="bar1 ham-bar block w-6 h-0.5 rounded transition-all duration-300 origin-center" style="background:#800000;"></span>
+      <span class="bar2 ham-bar block w-6 h-0.5 rounded transition-all duration-300" style="background:#800000;"></span>
+      <span class="bar3 ham-bar block w-6 h-0.5 rounded transition-all duration-300 origin-center" style="background:#800000;"></span>
     </button>
   </div>
 
@@ -415,13 +431,31 @@
     {id:'home',el:null},{id:'about',el:null},{id:'solution',el:null},
     {id:'team',el:null},{id:'gallery',el:null},{id:'contact',el:null}
   ];
-  window.addEventListener('DOMContentLoaded',()=>{ sections.forEach(s=>s.el=document.getElementById(s.id)); });
+  window.addEventListener('DOMContentLoaded',()=>{
+    sections.forEach(s=>s.el=document.getElementById(s.id));
+    updateHeader();
+  });
+
+  function updateHeader() {
+    const header = document.getElementById('main-header');
+    const homeEl = document.getElementById('home');
+    const homeBottom = homeEl ? homeEl.offsetTop + homeEl.offsetHeight - 20 : 0;
+    if (window.scrollY >= homeBottom) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+
   window.addEventListener('scroll',()=>{
+    updateHeader();
     const scrollY = window.scrollY+100; let current='top';
     sections.forEach(s=>{if(s.el&&s.el.offsetTop<=scrollY)current=s.id;});
     document.querySelectorAll('.nav-link').forEach(link=>{
       link.classList.toggle('active', link.dataset.section===current);
-      link.style.color = link.dataset.section===current ? '#800000' : '';
+      if (document.getElementById('main-header').classList.contains('scrolled')) {
+        link.style.color = link.dataset.section===current ? '#800000' : '';
+      }
     });
   });
 </script>
