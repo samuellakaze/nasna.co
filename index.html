@@ -366,10 +366,12 @@
     #main-header:not(.scrolled) .nav-link:hover { color: #fff !important; }
     #main-header:not(.scrolled) .nav-link.active { color: #fff !important; }
     #main-header.scrolled .nav-link { color: #1a0000; }
-    /* Hamburger bars white when transparent */
+    #main-header:not(.scrolled) #mobile-menu a { color: rgba(255,255,255,0.9) !important; border-color: rgba(255,255,255,0.15) !important; }
+    #main-header:not(.scrolled) #mobile-menu a:hover { color: #fff !important; }
     #main-header:not(.scrolled) .ham-bar { background: rgba(255,255,255,0.9) !important; }
     .nav-desktop a.active, .nav-desktop a:hover { color: var(--burgundy) !important; }
-    #mobile-menu { background: var(--burgundy-pale); border-top: 1px solid rgba(128,0,0,0.12); }
+    #mobile-menu { background: transparent; border-top: 1px solid transparent; transition: background 0.35s ease, border-color 0.35s ease; }
+    #main-header.scrolled #mobile-menu { background: rgba(249,240,240,0.96); border-top: 1px solid rgba(128,0,0,0.12); }
   </style>
 </head>
 <body style="background:#fff; color:#1a0000; overflow-x:hidden; font-family:'DM Sans',sans-serif;">
