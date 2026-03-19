@@ -462,10 +462,10 @@
   });
 </script>
 
-<div id="home" class="" style="position:relative; overflow:hidden;">
+<div id="home" class="pt-[72px]" style="position:relative; overflow:hidden; height:90vh; min-height:520px;">
 
-  <!-- The image with slow Ken Burns zoom -->
-  <img src="nasna.jpeg" alt="" class="w-full" style="display:block; transform-origin:center center; animation: kenBurns 14s ease-in-out forwards;" />
+  <!-- The image cropped from top — only lower portion shows -->
+  <img src="nasna.jpeg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;transform-origin:center bottom;animation:kenBurns 14s ease-in-out forwards;" />
 
   <!-- Layered atmosphere overlays -->
   <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,0,0,0.72) 0%, rgba(10,0,0,0.18) 45%, rgba(10,0,0,0.08) 100%);pointer-events:none;"></div>
@@ -480,25 +480,25 @@
   <div id="home-corner-bl" style="position:absolute;bottom:24px;left:24px;width:48px;height:48px;border-bottom:2px solid rgba(201,168,76,0.45);border-left:2px solid rgba(201,168,76,0.45);opacity:0;animation:subIn 0.6s ease 1.6s forwards;pointer-events:none;"></div>
 
   <!-- Overlay text layer — anchored bottom-left -->
-  <div style="position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; align-items:flex-start; padding: 0 0 clamp(40px,6vw,72px) clamp(28px,6vw,72px); pointer-events:none;">
+  <div class="home-text-layer" style="position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; align-items:flex-start; padding: 0 0 clamp(20px,5vw,72px) clamp(18px,5vw,72px); pointer-events:none;">
 
     <!-- Eyebrow label -->
     <div style="
-      display:inline-flex; align-items:center; gap:10px;
+      display:inline-flex; align-items:center; gap:8px;
       opacity:0; transform:translateX(-20px);
       animation: slideInLeft 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
-      margin-bottom:16px;
+      margin-bottom:clamp(8px,1.5vw,16px);
     ">
-      <span style="width:28px;height:1.5px;background:rgba(201,168,76,0.8);display:block;"></span>
-      <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,168,76,0.9);text-shadow:0 2px 12px rgba(0,0,0,0.5);">Kigali, Rwanda </span>
+      <span style="width:20px;height:1.5px;background:rgba(201,168,76,0.8);display:block;flex-shrink:0;"></span>
+      <span class="home-eyebrow" style="font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(0.5rem,1.4vw,0.68rem);letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,168,76,0.9);text-shadow:0 2px 12px rgba(0,0,0,0.5);">Kigali, Rwanda · Est. 2024</span>
     </div>
 
-    <!-- NASNA wordmark — letter by letter -->
+    <!-- NASNA wordmark -->
     <div style="overflow:hidden; line-height:1;">
       <div style="
         font-family:'Playfair Display', serif;
         font-weight:900;
-        font-size:clamp(3.5rem, 11vw, 9rem);
+        font-size:clamp(2rem, 8vw, 9rem);
         color:#fff;
         letter-spacing:0.08em;
         line-height:1;
@@ -514,7 +514,7 @@
       width:0;
       height:2px;
       background:linear-gradient(90deg, rgba(201,168,76,0.9), rgba(201,168,76,0.15));
-      margin-top:18px;
+      margin-top:clamp(8px,1.5vw,18px);
       animation: lineExpand 0.9s cubic-bezier(0.22,1,0.36,1) 0.9s forwards;
     "></div>
 
@@ -522,28 +522,38 @@
     <p style="
       font-family:'DM Sans', sans-serif;
       font-weight:400;
-      font-size:clamp(0.8rem, 1.6vw, 1.05rem);
+      font-size:clamp(0.6rem, 1.4vw, 1.05rem);
       color:rgba(255,255,255,0.78);
       letter-spacing:0.02em;
       line-height:1.6;
-      margin-top:16px;
-      max-width:420px;
+      margin-top:clamp(8px,1.2vw,16px);
+      max-width:min(420px, 70vw);
       opacity:0;
       transform:translateY(16px);
       animation: subIn 0.85s ease 1.15s forwards;
       text-shadow:0 2px 16px rgba(0,0,0,0.55);
     ">A think tank empowering Rwanda's youth through research, innovation, and digital opportunity.</p>
 
-    <!-- Scroll nudge -->
-    <div style="
+    <!-- Scroll nudge — hidden on small screens -->
+    <div class="home-scroll-nudge" style="
       display:flex; align-items:center; gap:10px;
-      margin-top:28px;
+      margin-top:clamp(12px,2vw,28px);
       opacity:0;
       animation: subIn 0.7s ease 1.5s forwards;
     ">
-      
-</div>
+      <div style="width:1.5px;height:32px;background:rgba(255,255,255,0.25);position:relative;overflow:hidden;border-radius:2px;">
+        <div style="position:absolute;top:0;left:0;width:100%;height:40%;background:rgba(201,168,76,0.8);border-radius:2px;animation:scrollBar 1.8s ease-in-out 2s infinite;"></div>
+      </div>
+      <span style="font-family:'Syne',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-shadow:0 2px 8px rgba(0,0,0,0.4);">Scroll</span>
+    </div>
+
   </div>
+
+  <style>
+    @media (max-width: 480px) {
+      .home-scroll-nudge { display: none !important; }
+    }
+  </style>
 </div>
 
 <style>
@@ -788,7 +798,7 @@
     <h2 class="section-heading" style="font-size:clamp(2.2rem,5vw,3.5rem);margin-top:8px;color:#fff;">
       Platform <em style="color:#c9a84c;">Demo</em>
     </h2>
-    <p style="margin-top:16px;color:rgba(255,255,255,0.45);max-width:480px;line-height:1.75;">Watch Nasna Jobs in action; an animated walkthrough showing how the platform works for both youth and businesses, screen by screen.</p>
+    <p style="margin-top:16px;color:rgba(255,255,255,0.45);max-width:480px;line-height:1.75;">Watch KaziYetu in action — an animated walkthrough showing how the platform works for both youth and businesses, screen by screen.</p>
 
     <div style="margin-top:48px;border-radius:24px;overflow:hidden;border:1px solid rgba(200,0,0,0.3);box-shadow:0 40px 80px rgba(0,0,0,0.5);">
       <iframe data-src="demo.html" class="w-full border-0 block" style="height:680px;" title="NASNA Jobs Platform Demo" tabindex="-1" id="demo-iframe"></iframe>
@@ -1010,8 +1020,9 @@
 
 <!-- ===== CONTACT SECTION ===== -->
 <section id="contact" style="background:#1a0000;padding:96px 24px;">
-  <div class="max-w-6xl mx-auto" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;" class="contact-grid">
+  <div class="max-w-6xl mx-auto contact-grid">
 
+    <!-- GET IN TOUCH INFO FIRST -->
     <div>
       <span style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,168,76,0.8);">Reach Out</span>
       <h2 class="section-heading" style="font-size:clamp(2.2rem,5vw,3.5rem);margin-top:8px;color:#fff;">
@@ -1024,7 +1035,7 @@
           <div style="width:44px;height:44px;border-radius:14px;background:rgba(128,0,0,0.3);border:1px solid rgba(128,0,0,0.5);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
             <svg class="w-4 h-4" style="color:#c9a84c;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <div><p style="color:#fff;font-weight:600;font-size:0.9rem;font-family:'Syne',sans-serif;">Email</p><p style="color:rgba(255,255,255,0.4);font-size:0.875rem;margin-top:2px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2b454a58454a6b4c464a424705484446">[email&#160;protected]</a></p></div>
+          <div><p style="color:#fff;font-weight:600;font-size:0.9rem;font-family:'Syne',sans-serif;">Email</p><p style="color:rgba(255,255,255,0.4);font-size:0.875rem;margin-top:2px;">nasna@gmail.com</p></div>
         </div>
         <div style="display:flex;align-items:start;gap:16px;">
           <div style="width:44px;height:44px;border-radius:14px;background:rgba(128,0,0,0.3);border:1px solid rgba(128,0,0,0.5);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -1045,6 +1056,7 @@
       </div>
     </div>
 
+    <!-- FORM BELOW -->
     <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:40px;">
       <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;color:#fff;margin-bottom:6px;">Get Involved</h3>
       <p style="color:rgba(255,255,255,0.35);font-size:0.875rem;margin-bottom:28px;">Join our mission as a mentor, volunteer, or partner. Tell us how you want to help.</p>
@@ -1059,7 +1071,7 @@
     </div>
 
   </div>
-  <style>@media(max-width:768px){.contact-grid{grid-template-columns:1fr!important;}}</style>
+  <style>.contact-grid{display:flex;flex-direction:column;gap:56px;}</style>
 </section>
 
 
